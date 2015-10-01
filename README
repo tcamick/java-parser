@@ -1,0 +1,78 @@
+#***************************************************************
+Name: Cole Amick
+Assignment: Parser
+Data: 02.23.2014
+#*****************************************************************
+
+
+#*******************************************************************
+The lexical analyser was written and is compatable with the following java inviroment
+#******************************************************************
+java version "1.7.0_51"
+Runtime Environment (IcedTea 2.4.4) (7u51-2.4.4-0ubuntu0.13.10.1)
+OpenJDK Server VM (build 24.45-b08, mixed mode)
+
+
+#********************************************************************
+Compilation instructions
+#********************************************************************
+
+To compile the program, execute the make command from a terminal emulator 
+inside the extracted directory
+
+Example:
+
+cole@monty:~/Parser/$ make
+
+#**********************************************************************************
+NOTES on Logging
+#**********************************************************************************
+
+In order to implement logging for my Parser class, a boolean data type parameter is used in the Parser's two constructors.
+To construct a parser with logging enabled, true must be passed to the parsers contructor.
+To construct a parser with logging disabled, false must be passed to the parsers contructor.
+
+The Two possible constuctors are. 
+
+/**
+ * Creates a parser that will use a file as input
+ * @param file - String
+ * @param logBit - boolean; If log bit is set to true logging will be enabled
+ */
+public Parser(String file, boolean logBit)
+
+/**
+ *  Creates a parser that will use a InputStream object as input
+ * @param inputStream - InputStream
+ * @param logBit - boolean; If log bit is set to true logging will be enabled
+*/
+public Parser(InputStream inputStream, boolean logBit)
+
+#**********************************************************************************
+NOTES on running my test program for the parser
+#**********************************************************************************			
+
+To compile my test program refer to compilation instructions from above
+
+My test program only uses the constructor that takes in a file name (in the form of a String) as a parameter.
+The test program uses the flag -v to enable logging and -d to disable logging.
+
+Only -v or -d are valid flags.
+
+Examples:
+
+cole@monty:~/Parser/$ java ParserTest -v ParserTestInput.txt
+ParserLog.txt created with logging enabled
+Error: (L31) Error on token "RETURN_" Expected R_PAREN_
+
+cole@ubuntu:~/Parser/$ java ParserTest -d ParserTestInput.txt
+Logging disabled
+Error: (L31) Error on token "RETURN_" Expected R_PAREN_
+
+
+
+
+
+
+
+
